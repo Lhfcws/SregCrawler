@@ -10,8 +10,8 @@
     },
 
     "request" :{
-        "cellphone_url" : "http://ptlogin.4399.com/ptlogin/isExist.do?appId=www_home&regMode=reg_normal&v=1&username={}",
-        "email_url" : "http://ptlogin.4399.com/ptlogin/isExist.do?appId=www_home&regMode=reg_normal&v=1&username={}",
+        "cellphone_url" : "",
+        "email_url" : "http://ptlogin.4399.com/ptlogin/isExist.do?appId=www_home&regMode=reg_normal&v=1&email={}",
         "user_url" : "http://ptlogin.4399.com/ptlogin/isExist.do?appId=www_home&regMode=reg_normal&v=1&username={}",
         "method" : "GET",
         "post_fields":{

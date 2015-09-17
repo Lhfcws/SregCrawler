@@ -11,8 +11,8 @@
 
     "request" :{
         "cellphone_url" : "https://secure.elong.com/passport/isajax/Register/ValidateMobileOrEmail?mobile={}",
-        "email_url" : "https://secure.elong.com/passport/isajax/Register/ValidateMobileOrEmail?mobile={}",
-        "user_url" : "https://secure.elong.com/passport/isajax/Register/ValidateMobileOrEmail?mobile={}",
+        "email_url" : "",
+        "user_url" : "",
         "method" : "GET",
         "post_fields":{
 

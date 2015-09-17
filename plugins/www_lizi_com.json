@@ -11,8 +11,8 @@
 
     "request" :{
         "cellphone_url" : "http://www.lizi.com/user/check_ifexists",
-        "email_url" : "http://www.lizi.com/user/check_ifexists",
-        "user_url" : "http://www.lizi.com/user/check_ifexists",
+        "email_url" : "",
+        "user_url" : "",
         "method" : "POST",
         "post_fields":{
             "type":"mobile",

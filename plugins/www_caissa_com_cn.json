@@ -10,9 +10,9 @@
     },
 
     "request" :{
-        "cellphone_url" : "http://ws.caissa.com.cn/user.ashx?JudgeEmail={}",
+        "cellphone_url" : "",
         "email_url" : "http://ws.caissa.com.cn/user.ashx?JudgeEmail={}",
-        "user_url" : "http://ws.caissa.com.cn/user.ashx?JudgeEmail={}",
+        "user_url" : "",
         "method" : "GET",
         "post_fields":{
 

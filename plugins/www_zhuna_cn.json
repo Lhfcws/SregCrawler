@@ -11,8 +11,8 @@
 
     "request" :{
         "cellphone_url" : "http://www.zhuna.cn/account/isreg/?mobile={}",
-        "email_url" : "http://www.zhuna.cn/account/isreg/?mobile={}",
-        "user_url" : "http://www.zhuna.cn/account/isreg/?mobile={}",
+        "email_url" : "",
+        "user_url" : "",
         "method" : "GET",
         "post_fields":{
 
@@ -20,8 +20,8 @@
     },
 
     "status":{
-        "judge_yes_keyword" : "\"success\":true,\"data\":[{\"",
-        "judge_no_keyword" : "\"success\":true,\"data\":false",
+        "judge_yes_keyword" : "\"data\":[{\"",
+        "judge_no_keyword" : "\"data\":false",
         "profile_url":""
     }
 }

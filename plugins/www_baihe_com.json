@@ -10,9 +10,9 @@
     },
 
     "request" :{
-        "cellphone_url" : "http://my.baihe.com/register/emailCheckForXs?email={}",
+        "cellphone_url" : "",
         "email_url" : "http://my.baihe.com/register/emailCheckForXs?email={}",
-        "user_url" : "http://my.baihe.com/register/emailCheckForXs?email={}",
+        "user_url" : "",
         "method" : "GET",
         "post_fields":{
 

@@ -10,9 +10,9 @@
     },
 
     "request" :{
-        "cellphone_url" : "http://my.iciba.com/?c=register&m=checkEmail",
+        "cellphone_url" : "",
         "email_url" : "http://my.iciba.com/?c=register&m=checkEmail",
-        "user_url" : "http://my.iciba.com/?c=register&m=checkEmail",
+        "user_url" : "",
         "method" : "POST",
         "post_fields":{
             "e":""

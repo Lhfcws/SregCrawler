@@ -10,9 +10,9 @@
     },
 
     "request" :{
-        "cellphone_url" : "https://login.dangdang.com/p/email_checker.php",
+        "cellphone_url" : "",
         "email_url" : "https://login.dangdang.com/p/email_checker.php",
-        "user_url" : "https://login.dangdang.com/p/email_checker.php",
+        "user_url" : "",
         "method" : "POST",
         "post_fields":{
             "email":""

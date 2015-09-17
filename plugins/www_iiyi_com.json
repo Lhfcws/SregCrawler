@@ -10,8 +10,8 @@
     },
 
     "request" :{
-        "cellphone_url" : "http://auth.iiyi.com/register/checku",
-        "email_url" : "http://auth.iiyi.com/register/checku",
+        "cellphone_url" : "",
+        "email_url" : "",
         "user_url" : "http://auth.iiyi.com/register/checku",
         "method" : "POST",
         "post_fields":{

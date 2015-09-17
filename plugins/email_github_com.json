@@ -10,9 +10,9 @@
     },
 
     "request" :{
-        "cellphone_url" : "https://github.com/signup_check/email",
+        "cellphone_url" : "",
         "email_url" : "https://github.com/signup_check/email",
-        "user_url" : "https://github.com/signup_check/email",
+        "user_url" : "",
         "method" : "POST",
         "post_fields":{
             "value":""

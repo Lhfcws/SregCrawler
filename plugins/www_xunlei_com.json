@@ -10,9 +10,9 @@
     },
 
     "request" :{
-        "cellphone_url" : "https://zhuce.xunlei.com/register?jsoncallback=jsonp1426128051530&m=check_mail&mail={}",
+        "cellphone_url" : "",
         "email_url" : "https://zhuce.xunlei.com/register?jsoncallback=jsonp1426128051530&m=check_mail&mail={}",
-        "user_url" : "https://zhuce.xunlei.com/register?jsoncallback=jsonp1426128051530&m=check_mail&mail={}",
+        "user_url" : "",
         "method" : "GET",
         "post_fields":{
 

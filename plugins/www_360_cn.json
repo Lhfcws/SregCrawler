@@ -11,8 +11,8 @@
 
     "request" :{
         "cellphone_url" : "http://login.360.cn/?&src=pcw_home&from=pcw_home&charset=UTF-8&requestScema=http&o=User&m=checkmobile&mobile={}",
-        "email_url" : "http://login.360.cn/?&src=pcw_home&from=pcw_home&charset=UTF-8&requestScema=http&o=User&m=checkmobile&mobile={}",
-        "user_url" : "http://login.360.cn/?&src=pcw_home&from=pcw_home&charset=UTF-8&requestScema=http&o=User&m=checkmobile&mobile={}",
+        "email_url" : "",
+        "user_url" : "",
         "method" : "GET",
         "post_fields":{
 
@@ -20,8 +20,8 @@
     },
 
     "status":{
-        "judge_yes_keyword" : "checkJsOut({\"errno\":\"30000\"",
-        "judge_no_keyword" : "checkJsOut({\"errno\":\"1100\"",
+        "judge_yes_keyword" : "errno\":\"30000",
+        "judge_no_keyword" : "errno\":\"[^30000]",
         "profile_url":""
     }
 }

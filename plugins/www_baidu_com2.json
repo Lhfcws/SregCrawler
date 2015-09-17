@@ -1,27 +1,27 @@
 {
-    "information":{
-        "author" : "evi1m0",
-        "date" : "2015/03/23",
-        "name" : "百度",
-        "website" : "http://www.baidu.com/",
-        "category" : "搜索",
-        "icon" : "https://www.baidu.com/img/bdlogo.png",
-        "desc" : "百度（Nasdaq：BIDU）是中国最大的中文搜索引擎、最大的中文网站。"
-    },
-
-    "request" :{
-        "cellphone_url" : "",
-        "email_url" : "https://passport.baidu.com/v2/?regmailcheck&token=4ec7c1177a45ff98f7376a6ff3b1a0c1&tpl=mn&apiver=v3&tt=1427085162611&email={}&callback=bd__cbs__pd8j8l",
-        "user_url" : "",
-        "method" : "GET",
-        "post_fields":{
-
-        }
-    },
-
-    "status":{
-        "judge_yes_keyword" : "{\"errInfo\":{ \"no\": \"110023\" }",
-        "judge_no_keyword" : "{\"errInfo\":{ \"no\": \"0\" }",
-        "profile_url" : ""
+  "information": {
+    "author": "evi1m0",
+    "date": "2015/03/23",
+    "name": "百度",
+    "website": "http://www.baidu.com/",
+    "category": "搜索",
+    "icon": "https://www.baidu.com/img/bdlogo.png",
+    "desc": "百度（Nasdaq：BIDU）是中国最大的中文搜索引擎、最大的中文网站。"
+  },
+  "request": {
+    "cellphone_url": "",
+    "email_url": "https://passport.baidu.com/v2/?regmailcheck&token=4ec7c1177a45ff98f7376a6ff3b1a0c1&tpl=mn&apiver=v3&tt=1427085162611&callback=bd__cbs__pd8j8l&email={}",
+    "user_url": "",
+    "method": "GET",
+    "post_fields": {
     }
+  },
+  "headers": {
+    "Cookie": "BAIDUID=F577541239FF31735126453C30B5C755:FG=1; HISTORY=fe42cfbbf997599b7f30f723f237; BDUSS=FE4blgxV0NuenpMdExiV3JRNDVsUW0tU0dXZUhvODNVV3R2YnlEeTNSSnNzVnBWQVFBQUFBJCQAAAAAAAAAAAEAAADc5KoNamVsd2lzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGwkM1VsJDNVO; PTOKEN=be53141f727baef8cab62b8c1cc6905f; STOKEN=6f49012c6ef8c152f64fecdaaed017b96974dfa3816e285c6ab4fb94633b218e; SAVEUSERID=9182399bdfa23cf15023; USERNAMETYPE=1; UBI=fi_PncwhpxZ%7ETaL92u5q85Z1TdzmTXmN6xba17Y3jfKwAtSSNkQr4v0dRajrfze4qXks-ek3-KotIrXAJB8hlcVe8-rpYMjsRt3ftVDmVJWgUHvVDHlcX1l-U%7EBXX5qCqu6K36DBPsYxl2GevJ3gE17RUVR; HOSUPPORT=1; BIDUPSID=F577541239FF31735126453C30B5C755; PSTM=1438100869; MCITY=-%3A; BDRCVFR[duHLhsMIvAR]=mk3SLVN4HKm; H_PS_PSSID=100382_1446_16709_13245_12868_16937_17003_15275_11622_13932_14554_17050"
+  },
+  "status": {
+    "judge_yes_keyword": "errInfo\":{ \"no\": \"110023",
+    "judge_no_keyword": "errInfo\":{ \"no\": \"0",
+    "profile_url": ""
+  }
 }

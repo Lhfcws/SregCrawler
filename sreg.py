@@ -12,6 +12,7 @@ import requests
 import urlparse
 import argparse
 import multiprocessing
+import re
 
 from common.color import inBlue, inRed
 from common.color import inWhite, inGreen, inYellow
@@ -28,24 +29,40 @@ def check(plugin, passport, passport_type):
         url = plugin["request"]["{0}_url".format(passport_type)]
     else:
         return
+
+    url = str(url).replace("{}", passport)
     app_name = plugin['information']['name']
     category = plugin["information"]["category"]
     website = plugin["information"]["website"]
     judge_yes_keyword = plugin['status']['judge_yes_keyword']
     judge_no_keyword = plugin['status']['judge_no_keyword']
+    p_yes, p_no = None, None
+    try:
+        p_yes = re.compile(judge_yes_keyword)
+        p_no = re.compile(judge_no_keyword)
+    except Exception as e:
+        # print(app_name + " " + str(e))
+        pass
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6',
         'Host': urlparse.urlparse(url).netloc,
         'Referer': url,
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
     }
+    if plugin.has_key("headers"):
+        headers.update(plugin["headers"])
+
     if plugin['request']['method'] == "GET":
         try:
             content = requests.get(url, headers=headers, timeout=8).content
-            content = sys.unicode(content, "utf-8")
+            content = unicode(content, "utf-8")
+            # print(app_name + ": " + content + ", " + str(headers))
         except Exception as e:
             print(inRed('\n[-] %s ::: %s\n' % (app_name, str(e))))
             return
-        if judge_yes_keyword in content and judge_no_keyword not in content:
+        flag = (p_yes is not None and re.match(p_yes, content) is not None) or judge_yes_keyword in content
+        flag &= not ((p_no is not None and re.match(p_no, content) is not None) or judge_no_keyword in content)
+        if flag:
             print(u"[{0}] {1}".format(category, ('%s (%s)' % (app_name, website))))
             icon = plugin['information']['icon']
             desc = plugin['information']['desc']
@@ -66,11 +83,14 @@ def check(plugin, passport, passport_type):
             encoding = chardet.detect(content)["encoding"]
             if encoding == None:
                 encoding = "utf-8"
-            content = sys.unicode(content, encoding)
+            content = unicode(content, encoding)
         except Exception as e:
             print(str(e) + str(app_name))
             return
-        if judge_yes_keyword in content and judge_no_keyword not in content:
+        # if judge_yes_keyword in content and judge_no_keyword not in content:
+        flag = (p_yes is not None and re.match(p_yes, content) is not None) or judge_yes_keyword in content
+        flag &= not ((p_no is not None and re.match(p_no, content) is not None) or judge_no_keyword in content)
+        if flag:
             print(u"[{0}] {1}".format(category, ('%s (%s)' % (app_name, website))))
             icon = plugin['information']['icon']
             desc = plugin['information']['desc']
@@ -82,7 +102,7 @@ def check(plugin, passport, passport_type):
 
 
 def main():
-    sys.reload(sys)
+    reload(sys)
     sys.setdefaultencoding("utf-8")
     parser = argparse.ArgumentParser(description="Check how many Platforms the User registered.")
     parser.add_argument("-u", action="store", dest="user")
@@ -142,13 +162,13 @@ def main():
                 continue
         if parser_argument.cellphone:
             p = multiprocessing.Process(target=check,
-                                        args=(content, sys.unicode(parser_argument.cellphone, "utf-8"), "cellphone"))
+                                        args=(content, unicode(parser_argument.cellphone, "utf-8"), "cellphone"))
         elif parser_argument.user:
             p = multiprocessing.Process(target=check,
-                                        args=(content, sys.unicode(parser_argument.user, "utf-8"), "user"))
+                                        args=(content, unicode(parser_argument.user, "utf-8"), "user"))
         elif parser_argument.email:
             p = multiprocessing.Process(target=check,
-                                        args=(content, sys.unicode(parser_argument.email, "utf-8"), "email"))
+                                        args=(content, unicode(parser_argument.email, "utf-8"), "email"))
         p.start()
         jobs.append(p)
     while (sum([i.is_alive() for i in jobs]) != 0):

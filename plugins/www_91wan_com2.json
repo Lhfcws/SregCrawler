@@ -11,8 +11,8 @@
 
     "request" :{
         "cellphone_url" : "http://www.91wan.com/include_new/check_reg.php",
-        "email_url" : "http://www.91wan.com/include_new/check_reg.php",
-        "user_url" : "http://www.91wan.com/include_new/check_reg.php",
+        "email_url" : "",
+        "user_url" : "",
         "method" : "POST",
         "post_fields":{
             "action":"chkname",
@@ -22,8 +22,8 @@
     },
 
     "status":{
-        "judge_yes_keyword" : "</font>a1_ww_1au_chka1_ww_1a0",
-        "judge_no_keyword" : "</font>a1_ww_1au_chka1_ww_1a1",
+        "judge_yes_keyword" : "此账号可以注册</font>a1_ww_1au_chka1_ww_1a0",
+        "judge_no_keyword" : "a1_ww_1au_chka1_ww_1a1",
         "profile_url":""
     }
 }

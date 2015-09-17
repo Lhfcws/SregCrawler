@@ -10,9 +10,9 @@
     },
 
     "request" :{
-        "cellphone_url" : "http://www.smzdm.com/user/register/ajax_check_user_email",
+        "cellphone_url" : "",
         "email_url" : "http://www.smzdm.com/user/register/ajax_check_user_email",
-        "user_url" : "http://www.smzdm.com/user/register/ajax_check_user_email",
+        "user_url" : "",
         "method" : "POST",
         "post_fields":{
             "user_email":""

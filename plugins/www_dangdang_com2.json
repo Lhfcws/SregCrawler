@@ -11,8 +11,8 @@
 
     "request" :{
         "cellphone_url" : "https://login.dangdang.com/p/mobile_checker.php",
-        "email_url" : "https://login.dangdang.com/p/mobile_checker.php",
-        "user_url" : "https://login.dangdang.com/p/mobile_checker.php",
+        "email_url" : "",
+        "user_url" : "",
         "method" : "POST",
         "post_fields":{
             "mobile":""

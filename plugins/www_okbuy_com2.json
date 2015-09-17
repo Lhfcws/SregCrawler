@@ -10,9 +10,9 @@
     },
 
     "request" :{
-        "cellphone_url" : "http://www.okbuy.com/ajax/email/emailifexist",
+        "cellphone_url" : "",
         "email_url" : "http://www.okbuy.com/ajax/email/emailifexist",
-        "user_url" : "http://www.okbuy.com/ajax/email/emailifexist",
+        "user_url" : "",
         "method" : "POST",
         "post_fields":{
             "email":""

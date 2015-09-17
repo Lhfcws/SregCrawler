@@ -10,9 +10,9 @@
     },
 
     "request" :{
-        "cellphone_url" : "http://login.lvmama.com/nsso/ajax/checkUniqueField.do",
+        "cellphone_url" : "",
         "email_url" : "http://login.lvmama.com/nsso/ajax/checkUniqueField.do",
-        "user_url" : "http://login.lvmama.com/nsso/ajax/checkUniqueField.do",
+        "user_url" : "",
         "method" : "POST",
         "post_fields":{
             "email" : ""

@@ -89,7 +89,7 @@ def output_finished(name):
     '''
     file_object.write(end_content)
     file_object.close()
-    print '\n[+] Results the save path: %s' % file_name
+    print('\n[+] Results the save path: %s' % file_name)
 
 
 def output_add(category, app_name, website, name, passport_type, icon, description):

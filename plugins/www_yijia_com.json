@@ -11,8 +11,8 @@
 
     "request" :{
         "cellphone_url" : "http://www.yijia.com/login/check_reg_phone/tel/{}",
-        "email_url" : "http://www.yijia.com/login/check_reg_phone/tel/{}",
-        "user_url" : "http://www.yijia.com/login/check_reg_phone/tel/{}",
+        "email_url" : "",
+        "user_url" : "",
         "method" : "GET",
         "post_fields":{
 
