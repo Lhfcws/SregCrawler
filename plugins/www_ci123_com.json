@@ -1,0 +1,29 @@
+{
+  "information": {
+    "author": "lhfcws",
+    "date": "2015/09/18",
+    "name": "育儿网",
+    "website": "http://www.ci123.com/",
+    "category": "母婴",
+    "icon": "http://static.muyingzhijia.com/omall/v13/images/myzj.ico",
+    "desc": "育儿网为父母提供怀孕分娩,胎教,育儿,保健,喂养,常见病护理,早教知识.大容量的宝宝主页,育儿博客服务.还提供有声读物,儿歌,亲子游戏 下载.为家长们提供了优秀全面的一站式育儿服务"
+  },
+  "request": {
+    "cellphone_url": "http://user.ci123.com/api/Reg/checkfield",
+    "email_url": "",
+    "user_url": "",
+    "method": "POST",
+    "post_fields": {
+      "field": "mobile",
+      "value": ""
+    }
+  },
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "status": {
+    "judge_yes_keyword": "status\":\"2",
+    "judge_no_keyword": "status\":\"0",
+    "profile_url": ""
+  }
+}

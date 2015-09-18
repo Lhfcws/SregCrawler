@@ -1,0 +1,27 @@
+{
+    "information":{
+        "author" : "lhfcws",
+        "date" : "2015/09/18",
+        "name" : "太平洋科技",
+        "website" : "http://www.pconline.com.cn/",
+        "category" : "科技",
+        "icon" : "",
+        "desc" : "太平洋电脑网是专业IT门户网站,为用户和经销商提供IT资讯和行情报价,涉及电脑,手机,数码产品,软件等."
+    },
+
+    "request" :{
+        "cellphone_url" : "http://passport3.pconline.com.cn/passport3/api/validate_mobile.jsp?req_enc=UTF-8&mobile={}",
+        "email_url" : "",
+        "user_url" : "",
+        "method" : "POST",
+        "post_fields":{
+
+        }
+    },
+
+    "status":{
+        "judge_yes_keyword" : "status\":43",
+        "judge_no_keyword" : "status\":0,\"desc\":\"OK",
+        "profile_url" : ""
+    }
+}

@@ -46,8 +46,8 @@ def check(plugin, passport, passport_type):
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6',
         'Host': urlparse.urlparse(url).netloc,
-        'Referer': url,
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+        'Referer': url
+        # 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
     }
     if plugin.has_key("headers"):
         headers.update(plugin["headers"])
@@ -55,13 +55,13 @@ def check(plugin, passport, passport_type):
     if plugin['request']['method'] == "GET":
         try:
             content = requests.get(url, headers=headers, timeout=8).content
-            content = unicode(content, "utf-8")
             # print(app_name + ": " + content + ", " + str(headers))
+            content = unicode(content, "utf-8")
         except Exception as e:
             print(inRed('\n[-] %s ::: %s\n' % (app_name, str(e))))
             return
-        flag = (p_yes is not None and re.match(p_yes, content) is not None) or judge_yes_keyword in content
-        flag &= not ((p_no is not None and re.match(p_no, content) is not None) or judge_no_keyword in content)
+        flag = (p_yes is not None and re.search(p_yes, content) is not None) or judge_yes_keyword in content
+        flag &= not ((p_no is not None and re.search(p_no, content) is not None) or judge_no_keyword in content)
         if flag:
             print(u"[{0}] {1}".format(category, ('%s (%s)' % (app_name, website))))
             icon = plugin['information']['icon']
@@ -70,26 +70,30 @@ def check(plugin, passport, passport_type):
         else:
             pass
     elif plugin['request']['method'] == "POST":
-        post_data = plugin['request']['post_fields']
-        if post_data.values().count("") != 1:
-            print
-            "The POST field can only leave a null value."
-            return
-        for k, v in post_data.iteritems():
-            if v == "":
-                post_data[k] = passport
+        if plugin['request'].has_key('post_serial'):
+            post_data = plugin['request']['post_serial']
+            post_data = post_data.replace("{}", passport)
+        else:
+            post_data = plugin['request']['post_fields']
+            if post_data.values().count("") > 1:
+                print("The POST field can only leave a null value.")
+                return
+            for k, v in post_data.iteritems():
+                if v == "":
+                    post_data[k] = passport
         try:
             content = requests.post(url, data=post_data, headers=headers, timeout=8).content
             encoding = chardet.detect(content)["encoding"]
             if encoding == None:
                 encoding = "utf-8"
             content = unicode(content, encoding)
+            # print(app_name + ": " + content + ", " + str(headers))
         except Exception as e:
-            print(str(e) + str(app_name))
+            print(inRed('\n[-] %s ::: %s\n' % (app_name, str(e))))
             return
         # if judge_yes_keyword in content and judge_no_keyword not in content:
-        flag = (p_yes is not None and re.match(p_yes, content) is not None) or judge_yes_keyword in content
-        flag &= not ((p_no is not None and re.match(p_no, content) is not None) or judge_no_keyword in content)
+        flag = (p_yes is not None and re.search(p_yes, content) is not None) or judge_yes_keyword in content
+        flag &= not ((p_no is not None and re.search(p_no, content) is not None) or judge_no_keyword in content)
         if flag:
             print(u"[{0}] {1}".format(category, ('%s (%s)' % (app_name, website))))
             icon = plugin['information']['icon']
@@ -109,47 +113,46 @@ def main():
     parser.add_argument("-e", action="store", dest="email")
     parser.add_argument("-c", action="store", dest="cellphone")
     parser_argument = parser.parse_args()
-    banner = '''
-     .d8888b.
-    d88P  Y88b
-    Y88b.
-     "Y888b.  888d888 .d88b.  .d88b.
-        "Y88b.888P"  d8P  Y8bd88P"88b
-          "888888    88888888888  888
-    Y88b  d88P888    Y8b.    Y88b 888
-     "Y8888P" 888     "Y8888  "Y88888
-                                  888
-                             Y8b d88P
-                              "Y88P"
-    '''
+    # banner = '''
+    #  .d8888b.
+    # d88P  Y88b
+    # Y88b.
+    #  "Y888b.  888d888 .d88b.  .d88b.
+    #     "Y88b.888P"  d8P  Y8bd88P"88b
+    #       "888888    88888888888  888
+    # Y88b  d88P888    Y8b.    Y88b 888
+    #  "Y8888P" 888     "Y8888  "Y88888
+    #                               888
+    #                          Y8b d88P
+    #                           "Y88P"
+    # '''
     all_argument = [parser_argument.cellphone, parser_argument.user, parser_argument.email]
     plugins = glob.glob("./plugins/*.json")
-    print
-    inGreen(banner)
-    print
-    '[*] App: Search Registration'
-    print
-    '[*] Version: V1.0(20150303)'
-    print
-    '[*] Website: buzz.beebeeto.com'
+    # print(inGreen(banner))
+    # print
+    # '[*] App: Search Registration'
+    # print
+    # '[*] Version: V1.0(20150303)'
+    # print
+    # '[*] Website: buzz.beebeeto.com'
     file_name = ""
     if all_argument.count(None) != 2:
         print
         '\nInput "-h" view the help information.'
         sys.exit(0)
     if parser_argument.cellphone:
-        print
-        inRed('\n[+] Phone Checking: %s\n') % parser_argument.cellphone
+        # print
+        # inRed('\n[+] Phone Checking: %s\n') % parser_argument.cellphone
         file_name = "cellphone_" + str(parser_argument.cellphone)
         output_init(file_name, "Phone: ", str(parser_argument.cellphone))
     if parser_argument.user:
-        print
-        inRed('\n[+] Username Checking: %s\n') % parser_argument.user
+        # print
+        # inRed('\n[+] Username Checking: %s\n') % parser_argument.user
         file_name = "user_" + str(parser_argument.user)
         output_init(file_name, "UserName: ", str(parser_argument.user))
     if parser_argument.email:
-        print
-        inRed('\n[+] Email Checking: %s\n') % parser_argument.email
+        # print
+        # inRed('\n[+] Email Checking: %s\n') % parser_argument.email
         file_name = "email_" + str(parser_argument.email)
         output_init(file_name, "E-mail: ", str(parser_argument.email))
     jobs = []
@@ -175,7 +178,7 @@ def main():
         pass
     for i in jobs:
         i.join()
-    output_finished(file_name)
+    # output_finished(file_name)
 
 
 if __name__ == '__main__':

@@ -1,0 +1,29 @@
+{
+  "information": {
+    "author": "lhfcws",
+    "date": "2015/09/18",
+    "name": "母婴之家",
+    "website": "http://www.muyingzhijia.com/",
+    "category": "母婴",
+    "icon": "http://static.muyingzhijia.com/omall/v13/images/myzj.ico",
+    "desc": "母婴之家是一站式专业母婴用品网上商城"
+  },
+  "request": {
+    "cellphone_url": "http://www.muyingzhijia.com/Ajax/LoginRegisterAjax.aspx/UserEmailMoblieOnly",
+    "email_url": "http://www.muyingzhijia.com/Ajax/LoginRegisterAjax.aspx/UserEmailMoblieOnly",
+    "user_url": "",
+    "method": "POST",
+    "post_fields": {
+      "emailmoblie": ""
+    },
+    "post_serial": " { emailmoblie: '{}'}"
+  },
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "status": {
+    "judge_yes_keyword": "d\":\"已存在",
+    "judge_no_keyword": "d\":1",
+    "profile_url": ""
+  }
+}
