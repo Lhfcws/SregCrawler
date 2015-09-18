@@ -50,5 +50,6 @@ docs/_build/
 *.iml
 
 # result
-youzan
+youzan/result
+youzan/data/split*
 reports/*.html
