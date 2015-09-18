@@ -22,6 +22,7 @@ diff = end - start
 CMD = "head -%d data/all_numbers.txt | tail -%d  > data/split.txt" % (end, diff)
 
 print(CMD)
+os.system(CMD)
 
 ## Split file
 CMD = "cp data/split.txt data/split ; cd data/split ; split split.txt -l 100 ; rm split.txt"
