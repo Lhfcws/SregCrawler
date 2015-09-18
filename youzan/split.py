@@ -24,5 +24,5 @@ CMD = "head -%d data/all_numbers.txt | tail -%d  > data/split.txt" % (end, diff)
 print(CMD)
 
 ## Split file
-CMD = "cp split.txt data/ ; cd data ; split split.txt -l 100 ; rm split.txt"
+CMD = "cp data/split.txt data/split ; cd data/split ; split split.txt -l 100 ; rm split.txt"
 os.system(CMD)

@@ -4,21 +4,20 @@ __pycache__/
 *.pyc
 
 # C extensions
-*.so
+./*.so
 
 # Distribution / packaging
-.Python
-env/
+./.Python
 build/
 develop-eggs/
 dist/
 eggs/
-lib/
+./lib/
 lib64/
 parts/
 sdist/
 var/
-*.egg-info/
+./*.egg-info/
 .installed.cfg
 *.egg
 
