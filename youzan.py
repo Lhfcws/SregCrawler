@@ -21,7 +21,7 @@ def run(phones, dr):
         print(phone + " done. " + str(progress))
 
 def main():
-    root = "youzan/data/split100/"
+    root = "youzan/data/split/"
     os.system("mkdir -p youzan/result")
     files = os.listdir(root)
     progress = 0
