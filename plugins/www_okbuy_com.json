@@ -1,27 +1,27 @@
 {
     "information":{
-        "author" : "e0",
-        "date" : "2015/03/11",
+        "author" : "lhfcws",
+        "date" : "2015/09/20",
         "name" : "好乐买",
         "website" : "http://www.okbuy.com/",
         "category" : "购物",
         "icon" : "http://www.okbuy.com/resources/images/miniheaderlogo.png",
-        "desc" : "好乐买使用OkBuy的用意就是让更多的人体验到便捷的网上购物体验，好，就来买吧！"
+        "desc" : "买鞋子哪个网站好,好乐买官网-正品鞋购物网站。网购Nike耐克,Adidas阿迪达斯就上好乐买网上鞋城,厂家授权,100%正品保障,免费配送,自由退换货,提供完美购物体验!"
     },
 
     "request" :{
-        "cellphone_url" : "",
+        "cellphone_url" : "http://www.okbuy.com/ajax/tel/check_bind",
         "email_url" : "",
-        "user_url" : "http://www.okbuy.com/members/register/checkUsername",
+        "user_url" : "",
         "method" : "POST",
         "post_fields":{
-            "username":""
+            "tel":""
         }
     },
 
     "status":{
-        "judge_yes_keyword":"-102",
-        "judge_no_keyword":"1",
+        "judge_yes_keyword":"1",
+        "judge_no_keyword":"-2",
         "profile_url" : ""
     }
 }

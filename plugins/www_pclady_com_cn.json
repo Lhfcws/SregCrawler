@@ -1,0 +1,26 @@
+{
+    "information":{
+        "author" : "lhfcws",
+        "date" : "2015/09/20",
+        "name" : "太平洋女性",
+        "website" : "http://www.pclady.com.cn/",
+        "category" : "时尚",
+        "icon" : "http://www.pclady.com.cn/favicon.ico",
+        "desc" : "风采.迷人.做自己-Be Pretty.Be Charming.Be myself-太平洋女性网，Pclady.com.cn是集实用性，互动性，鉴赏性为一体的专业女性资讯平台；着力打造时尚、智慧、自信、独立、健康的新时代女性。Pclady下设美容、服饰、健康、居家、情感、品味、搜店、打折优惠、品牌库及女性论坛等频道，使网友可以获取最新、最快、最全面的时尚潮流讯息和消费导向"
+    },
+
+    "request" :{
+        "cellphone_url" : "http://passport3.pclady.com.cn/passport3/api/validate_mobile.jsp?mobile={}&req_enc=UTF-8",
+        "email_url" : "",
+        "user_url" : "",
+        "method" : "POST",
+        "post_fields":{
+        }
+    },
+
+    "status":{
+        "judge_yes_keyword" : "status\":43",
+        "judge_no_keyword" : "status\":0",
+        "profile_url":""
+    }
+}

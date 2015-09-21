@@ -1,0 +1,27 @@
+{
+    "information":{
+        "author" : "lhfcws",
+        "date" : "2015/09/20",
+        "name" : "乐蜂网",
+        "website" : "http://www.lefeng.com/",
+        "category" : "购物",
+        "icon" : "https://www.lefeng.com",
+        "desc" : "乐蜂网是以提供亿万中国女性优质生活的首选入口为目标，化妆品，专业美妆购物网站千余家全球品牌授权，由始至终实施100%行货正品策略的垂直行业的B2C网站。"
+    },
+
+    "request" :{
+        "cellphone_url" : "https://passport.lefeng.com/ajax/passport/ajaxCheckLogin.jsp?login={}",
+        "email_url" : "",
+        "user_url" : "",
+        "method" : "GET",
+        "post_fields":{
+            "mobile":""
+        }
+    },
+
+    "status":{
+        "judge_yes_keyword" : "flag':'-104",
+        "judge_no_keyword" : "flag':'0",
+        "profile_url":""
+    }
+}

@@ -1,0 +1,26 @@
+{
+  "information": {
+    "author": "lhfcws",
+    "date": "2015/09/20",
+    "name": "yoka",
+    "website": "http://www.yoka.com/",
+    "category": "时尚",
+    "icon": "",
+    "desc": "YOKA时尚网是服务于高收入群体的时尚生活门户,时尚网站.专注提供时尚奢侈品资讯报道,品牌动态,购物交流等服务；同时也是时尚人士,明星生活交流的主题社区。优卡网,全方位诠释时尚奢华生活。"
+  },
+  "request": {
+    "cellphone_url": "http://passport.yoka.com/checkmobile.php",
+    "email_url": "",
+    "user_url": "",
+    "method": "POST",
+    "post_fields": {
+      "mobile": "",
+      "action": "checkmobile"
+    }
+  },
+  "status": {
+    "judge_yes_keyword": "-9",
+    "judge_no_keyword": "",
+    "profile_url": ""
+  }
+}

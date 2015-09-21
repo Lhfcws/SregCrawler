@@ -1,0 +1,26 @@
+{
+  "information": {
+    "author": "lhfcws",
+    "date": "2015/09/20",
+    "name": "易迅网",
+    "website": "http://www.yixun.com/",
+    "category": "购物",
+    "icon": "",
+    "desc": "易迅网，在线销售数码家电，上万品牌、数十万商品，100%正品低价，闪电配送，买贵就赔！支持货到付款，机打发票，分期付款，送货上门。"
+  },
+  "request": {
+    "cellphone_url": "https://ecclogin.yixun.com/login/sendidentifycode?mobile={}",
+    "email_url": "",
+    "user_url": "",
+    "method": "GET",
+    "post_fields": {
+      "mobile": "",
+      "action": "checkmobile"
+    }
+  },
+  "status": {
+    "judge_yes_keyword": "errno\": \"0",
+    "judge_no_keyword": "errno\": \"3508",
+    "profile_url": ""
+  }
+}

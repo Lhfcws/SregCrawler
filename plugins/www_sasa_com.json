@@ -1,0 +1,27 @@
+{
+    "information":{
+        "author" : "lhfcws",
+        "date" : "2015/09/20",
+        "name" : "莎莎网",
+        "website" : "http://www.sasa.com/",
+        "category" : "购物",
+        "icon" : "http://cdnec.sasa.com/public/app/site/statics/favicon.ico",
+        "desc" : "香港莎莎官网 - 亚洲最大国际化妆品商城"
+    },
+
+    "request" :{
+        "cellphone_url" : "https://www.sasa.com/passport-signup_ajax_check_name.html",
+        "email_url" : "https://www.sasa.com/passport-signup_ajax_check_name.html",
+        "user_url" : "",
+        "method" : "POST",
+        "post_fields":{
+            "pam_account[login_name]":""
+        }
+    },
+
+    "status":{
+        "judge_yes_keyword" : "该手机号已被注册",
+        "judge_no_keyword" : "needVerify\":\"true",
+        "profile_url":""
+    }
+}

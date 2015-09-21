@@ -1,0 +1,24 @@
+{
+  "information": {
+    "author": "lhfcws",
+    "date": "2015/09/20",
+    "name": "vogue",
+    "website": "http://www.vogue.com/",
+    "category": "时尚",
+    "icon": "",
+    "desc": "与《VOGUE服饰与美容》时尚杂志同属康泰纳仕中国，专业潮流时尚网站，囊括每季国际时装发布和潮流趋势解读，专注于潮流服饰、流行服装、美容美体、护肤彩妆、珠宝配饰、奢侈品、名表、手袋、鞋靴等时尚领域，报道重大时尚事件、国际时装周、新品发布、明星时尚、名流派对、珠宝展会、腕表展会等，网站拥有海量时尚图片及视频，最全最快呈现《VOGUE服饰与美容》杂志内容。"
+  },
+  "request": {
+    "cellphone_url": "http://passport.vogue.com.cn/front/passport/ajaxCheckExist?type=mobile&value={}",
+    "email_url": "http://passport.vogue.com.cn/front/passport/ajaxCheckExist?type=email&value={}",
+    "user_url": "",
+    "method": "GET",
+    "post_fields": {
+    }
+  },
+  "status": {
+    "judge_yes_keyword": "-9",
+    "judge_no_keyword": "0",
+    "profile_url": ""
+  }
+}

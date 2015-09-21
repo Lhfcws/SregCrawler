@@ -1,0 +1,27 @@
+{
+    "information":{
+        "author" : "lhfcws",
+        "date" : "2015/09/20",
+        "name" : "美团",
+        "website" : "http://www.meituan.com/",
+        "category" : "购物",
+        "icon" : "https://www.meituan.com",
+        "desc" : "美团网-团购首选,专业品质 团购网!为您提供美食,电影票,KTV,酒店,旅游等 团购大全,团购网站大全 美团网,您身边的吃喝玩乐 好帮手!"
+    },
+
+    "request" :{
+        "cellphone_url" : "https://passport.meituan.com/account/signupcheck",
+        "email_url" : "",
+        "user_url" : "",
+        "method" : "POST",
+        "post_fields":{
+            "mobile":""
+        }
+    },
+
+    "status":{
+        "judge_yes_keyword" : "该手机号已被绑定",
+        "judge_no_keyword" : "success\":0",
+        "profile_url":""
+    }
+}

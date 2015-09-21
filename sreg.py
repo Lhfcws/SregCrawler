@@ -34,8 +34,8 @@ def check(plugin, passport, passport_type):
     app_name = plugin['information']['name']
     category = plugin["information"]["category"]
     website = plugin["information"]["website"]
-    judge_yes_keyword = plugin['status']['judge_yes_keyword']
-    judge_no_keyword = plugin['status']['judge_no_keyword']
+    judge_yes_keyword = plugin['status']['judge_yes_keyword'].strip()
+    judge_no_keyword = plugin['status']['judge_no_keyword'].strip()
     p_yes, p_no = None, None
     try:
         p_yes = re.compile(judge_yes_keyword)
@@ -56,12 +56,12 @@ def check(plugin, passport, passport_type):
         try:
             content = requests.get(url, headers=headers, timeout=8).content
             # print(app_name + ": " + content + ", " + str(headers))
-            content = unicode(content, "utf-8")
+            content = unicode(content, "utf-8").strip()
         except Exception as e:
             print(inRed('\n[-] %s ::: %s\n' % (app_name, str(e))))
             return
-        flag = (p_yes is not None and re.search(p_yes, content) is not None) or judge_yes_keyword in content
-        flag &= not ((p_no is not None and re.search(p_no, content) is not None) or judge_no_keyword in content)
+        flag = (p_yes is not None and re.search(p_yes, content) is not None) or (judge_no_keyword != "" and judge_yes_keyword in content)
+        flag &= not ((p_no is not None and re.search(p_no, content) is not None) or (judge_no_keyword != "" and judge_no_keyword in content))
         if flag:
             print(u"[{0}] {1}".format(category, ('%s (%s)' % (app_name, website))))
             icon = plugin['information']['icon']
@@ -86,14 +86,14 @@ def check(plugin, passport, passport_type):
             encoding = chardet.detect(content)["encoding"]
             if encoding == None:
                 encoding = "utf-8"
-            content = unicode(content, encoding)
+            content = unicode(content, encoding).strip()
             # print(app_name + ": " + content + ", " + str(headers))
         except Exception as e:
             print(inRed('\n[-] %s ::: %s\n' % (app_name, str(e))))
             return
         # if judge_yes_keyword in content and judge_no_keyword not in content:
-        flag = (p_yes is not None and re.search(p_yes, content) is not None) or judge_yes_keyword in content
-        flag &= not ((p_no is not None and re.search(p_no, content) is not None) or judge_no_keyword in content)
+        flag = (p_yes is not None and re.search(p_yes, content) is not None) or (judge_no_keyword != "" and judge_yes_keyword in content)
+        flag &= not ((p_no is not None and re.search(p_no, content) is not None) or (judge_no_keyword != "" and judge_no_keyword in content))
         if flag:
             print(u"[{0}] {1}".format(category, ('%s (%s)' % (app_name, website))))
             icon = plugin['information']['icon']

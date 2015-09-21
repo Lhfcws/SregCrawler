@@ -1,0 +1,26 @@
+{
+  "information": {
+    "author": "lhfcws",
+    "date": "2015/09/20",
+    "name": "顺丰优选",
+    "website": "http://www.sfbest.com",
+    "category": "购物",
+    "icon": "",
+    "desc": "顺丰优选顺丰速运旗下全球美食优选网购商城，精选来自60多个国家和地区的进口食品，正品行货，支持货到付款。销售包括进口奶粉、母婴用品、营养保健品、生鲜食品、粮油、酒水、休闲食品等近万种商品。"
+  },
+  "request": {
+    "cellphone_url": "https://passport.sfbest.com/ajax/verifmobile/",
+    "email_url": "",
+    "user_url": "",
+    "method": "POST",
+    "post_fields": {
+      "name": "userMobile",
+      "param": ""
+    }
+  },
+  "status": {
+    "judge_yes_keyword": "该手机号已",
+    "judge_no_keyword": "y",
+    "profile_url": ""
+  }
+}
