@@ -44,10 +44,9 @@ def check(plugin, passport, passport_type):
         # print(app_name + " " + str(e))
         pass
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6',
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36',
         'Host': urlparse.urlparse(url).netloc,
-        'Referer': url
-        # 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+        'Referer': url,
     }
     if plugin.has_key("headers"):
         headers.update(plugin["headers"])
