@@ -36,7 +36,7 @@ def main():
         phones = get_all_phones(path)
         print("[MAIN] Get phones size: " + str(len(phones)) )
         run(phones, fl)
-        progress += 1000
+        progress += len(phones)
         print("[MAIN] Run " + fl + " done. Progress: " + str(progress))
 
         os.system("rm reports/cellphone_*.html")
