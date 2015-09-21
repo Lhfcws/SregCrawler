@@ -4,9 +4,10 @@ __author__ = 'lhfcws'
 
 import socket, os
 
+os.system("rm -rf data/split")
 os.system("mkdir -p data/split")
 # TOTAL
-TOTAL = 50000
+TOTAL = 555671
 SPLIT = 6
 
 block = TOTAL / SPLIT + 1
@@ -25,5 +26,5 @@ print(CMD)
 os.system(CMD)
 
 ## Split file
-CMD = "cp data/split.txt data/split ; cd data/split ; split split.txt -l 100 ; rm split.txt"
+CMD = "cp data/split.txt data/split ; cd data/split ; split split.txt -l 1000 ; rm split.txt"
 os.system(CMD)
