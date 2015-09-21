@@ -4,6 +4,7 @@ __author__ = 'lhfcws'
 
 import socket, os
 
+os.system("rm -f data/split")
 os.system("mkdir -p data/split")
 # TOTAL
 TOTAL = 50000
