@@ -87,7 +87,7 @@ def check(plugin, passport, passport_type):
             if encoding == None:
                 encoding = "utf-8"
             content = unicode(content, encoding).strip()
-            # print(app_name + ": " + content + ", " + str(headers))
+            print(app_name + ": " + content + ", " + str(headers))
         except Exception as e:
             print(inRed('\n[-] %s ::: %s\n' % (app_name, str(e))))
             return
