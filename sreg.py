@@ -54,8 +54,12 @@ def check(plugin, passport, passport_type):
     if plugin['request']['method'] == "GET":
         try:
             content = requests.get(url, headers=headers, timeout=8).content
-            # print(app_name + ": " + content + ", " + str(headers))
             content = unicode(content, "utf-8").strip()
+            # GET DEBUG
+            # print(inRed(app_name + ": " + content + ", " + str(headers)))
+            # GET DEBUG FILTER BY APPNAME
+            # if app_name == "":
+            #     print(inRed(app_name + ": " + content + ", " + str(headers)))
         except Exception as e:
             print(inRed('\n[-] %s ::: %s\n' % (app_name, str(e))))
             return
@@ -86,7 +90,11 @@ def check(plugin, passport, passport_type):
             if encoding == None:
                 encoding = "utf-8"
             content = unicode(content, encoding).strip()
-            # print(app_name + ": " + content + ", " + str(headers))
+            # POST DEBUG
+            # print(inRed(app_name + ": " + content + ", " + str(headers)))
+            # POST DEBUG FILTER BY APPNAME
+            # if app_name == "":
+            #     print(inRed(app_name + ": " + content + ", " + str(headers)))
         except Exception as e:
             print(inRed('\n[-] %s ::: %s\n' % (app_name, str(e))))
             return
