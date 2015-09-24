@@ -100,7 +100,7 @@ def work(path):
                     name, user["footprint"]["url"] = res
                     if name in plugins:
                         user["footprint"]["content"] = plugins[name][3]
-                    fw.write(json.dumps(user))
+                    fw.write(json.dumps(user, ensure_ascii=False))
                     fw.write("\n")
             fw.close()
 
