@@ -18,7 +18,7 @@ SPLIT = 6
 
 block = TOTAL / SPLIT + 1
 host = socket.gethostname()
-host = "dev6"
+#host = "dev6"
 index = int(list(host)[-1])
 start = block * (index - 1)
 end = start + block
