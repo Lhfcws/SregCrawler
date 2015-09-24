@@ -49,6 +49,6 @@ docs/_build/
 *.iml
 
 # result
-youzan/result
-youzan/data/split*
+*/result
+*/data/split*
 reports/*.html

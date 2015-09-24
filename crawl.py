@@ -1,9 +1,11 @@
 import sys, os, time
 
+BUSINESS = ""
+
 def get_all_phones(fl):
     # return ["15800010588"]
     with open(fl, "r") as fp:
-    # with open("youzan/data/all_numbers.txt", "r") as fp:
+    # with open(BUSINESS + "/data/all_numbers.txt", "r") as fp:
         ret = []
         for line in fp.readlines():
             ret.append(line.strip())
@@ -11,7 +13,7 @@ def get_all_phones(fl):
 
 def run(phones, dr):
     progress = 0
-    path = "youzan/result/" + dr
+    path = BUSINESS + "/result/" + dr
     os.system("mkdir -p " + path)
 
     cmd = "python sreg.py -c %s > " + path + "/%s.txt"
@@ -21,12 +23,12 @@ def run(phones, dr):
         print(phone + " done. " + str(progress))
 
 def main():
-    root = "youzan/data/split/"
-    os.system("mkdir -p youzan/result")
+    root = BUSINESS + "/data/split/"
+    os.system("mkdir -p %s/result" % BUSINESS)
     files = os.listdir(root)
     progress = 0
 
-    res_files = os.listdir("youzan/result")
+    res_files = os.listdir(BUSINESS + "/result")
 
     for fl in files:
         if res_files.count(fl) > 0:
@@ -46,4 +48,6 @@ def main():
 
 
 if __name__ == "__main__":
+    BUSINESS = sys.argv[1]
+    # print(BUSINESS)
     main()
