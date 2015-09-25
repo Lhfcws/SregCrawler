@@ -91,6 +91,7 @@ def main():
     pool.join()
     print("Finish translating to json. Jobs size: " + str(len(jobs)))
 
+
 def work(args):
     business, path = args
     os.system("mkdir -p %s/json" % business)
@@ -108,10 +109,10 @@ def work(args):
         with open(path + fl, "r", encoding="utf-8") as fp:
             for line in fp.readlines():
                 line = line.strip()
-                if line.startswith("[-"):
+                if line.startswith("[-]"):
                     continue
 
-                if line.startswith("["):
+                if line.count(".com") > 0 or line.count(".cn") > 0:
                     res = parse_line(line)
                     if res is None: continue
                     name, user["footprint"]["url"] = res
@@ -120,8 +121,6 @@ def work(args):
                     fw.write(json.dumps(user, ensure_ascii=False))
                     fw.write("\n")
             fw.close()
-
-
 
 ####################
 if __name__ == "__main__":
