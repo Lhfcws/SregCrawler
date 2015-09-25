@@ -55,10 +55,16 @@ def build_plugins_dict():
     d = {}
 
     for plugin in plugins:
-        d[plugin["information"]["name"]] = (
-        plugin["information"]["name"], plugin["information"]["category"], plugin["information"]["website"],
-        plugin["information"]["desc"])
-
+        fp = open(plugin, "r", encoding="utf-8")
+        plugin = json.load(fp)
+        fp.close()
+        try:
+            d[plugin["information"]["name"]] = (
+                plugin["information"]["name"], plugin["information"]["category"],
+                plugin["information"]["website"], plugin["information"]["desc"]
+            )
+        except Exception:
+            pass
     return d
 
 
@@ -76,13 +82,13 @@ def main():
     jobs = []
 
     for xdir in os.listdir(result_root):
-        jobs.append(result_root + xdir)
+        jobs.append(result_root + xdir + "/")
 
     pool = Pool(processes=5)
-    pool.apply_async(func=work, args=jobs)
+    pool.apply(func=work, args=jobs)
     pool.close()
     pool.join()
-    print("Finish translating to json.")
+    print("Finish translating to json. Jobs size: " + str(len(jobs)))
 
 def work(path):
     plugins = build_plugins_dict()
@@ -95,7 +101,7 @@ def work(path):
             user["idType"] = "email"
 
         os.system("mkdir -p %s/json" % BUSINESS)
-        fw = open(BUSINESS + "/json/" + path.split("/")[-1] + ".json", "w", encoding="utf-8")
+        fw = open(BUSINESS + "/json/" + path.split("/")[-2] + ".json", "w", encoding="utf-8")
         with open(path + fl, "r", encoding="utf-8") as fp:
             for line in fp.readlines():
                 line = line.strip()
