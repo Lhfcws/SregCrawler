@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # encoding: utf-8
 import sys, os, re, json, copy, glob
+from multiprocessing import Pool
 
 BUSINESS = ""
 re_phone = re.compile("[0-9]+")
@@ -77,6 +78,11 @@ def main():
     for xdir in os.listdir(result_root):
         jobs.append(result_root + xdir)
 
+    pool = Pool(processes=5)
+    pool.apply_async(func=work, args=jobs)
+    pool.close()
+    pool.join()
+    print("Finish translating to json.")
 
 def work(path):
     plugins = build_plugins_dict()
