@@ -82,16 +82,19 @@ def main():
     jobs = []
 
     for xdir in os.listdir(result_root):
-        jobs.append(result_root + xdir + "/")
+        jobs.append((BUSINESS, result_root + xdir + "/"))
 
     pool = Pool(processes=5)
     # pool.apply(func=work, args=jobs)
-    pool.map_async(func=work, iterable=jobs)
+    pool.map(func=work, iterable=jobs)
     pool.close()
     pool.join()
     print("Finish translating to json. Jobs size: " + str(len(jobs)))
 
-def work(path):
+def work(args):
+    business, path = args
+    os.system("mkdir -p %s/json" % business)
+    # print(business)
     plugins = build_plugins_dict()
     for fl in os.listdir(path):
         user = copy.deepcopy(JSON_TMPL)
@@ -101,8 +104,7 @@ def work(path):
         elif is_email(sid):
             user["idType"] = "email"
 
-        os.system("mkdir -p %s/json" % BUSINESS)
-        fw = open(BUSINESS + "/json/" + path.split("/")[-2] + ".json", "w", encoding="utf-8")
+        fw = open(business + "/json/" + path.split("/")[-2] + ".json", "w", encoding="utf-8")
         with open(path + fl, "r", encoding="utf-8") as fp:
             for line in fp.readlines():
                 line = line.strip()
