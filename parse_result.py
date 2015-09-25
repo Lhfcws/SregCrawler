@@ -85,7 +85,8 @@ def main():
         jobs.append(result_root + xdir + "/")
 
     pool = Pool(processes=5)
-    pool.apply(func=work, args=jobs)
+    # pool.apply(func=work, args=jobs)
+    pool.map_async(func=work, iterable=jobs)
     pool.close()
     pool.join()
     print("Finish translating to json. Jobs size: " + str(len(jobs)))
