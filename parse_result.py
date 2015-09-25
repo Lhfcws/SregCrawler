@@ -105,7 +105,7 @@ def work(args):
         elif is_email(sid):
             user["idType"] = "email"
 
-        fw = open(business + "/json/" + path.split("/")[-2] + ".json", "w", encoding="utf-8")
+        fw = open(business + "/json/" + path.split("/")[-2] + ".json", "a", encoding="utf-8")
         with open(path + fl, "r", encoding="utf-8") as fp:
             for line in fp.readlines():
                 line = line.strip()
