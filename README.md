@@ -1,4 +1,4 @@
-### Sreg V1.0
+### SregCrawler V1.0
 
 - AppName: SregCrawler [Search Registration, based on Sreg by http://n0tr00t.github.io/Sreg/]
 - Create:  2015-09-16
